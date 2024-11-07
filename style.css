@@ -1,0 +1,66 @@
+/* Seleccionamos el body*/
+body {
+    /*Ponemos un Fondo Azul*/
+    background: steelblue;
+    /*Establecemos como blanco el color del título*/
+    color: #eee;
+    /*Ponemos una fuente sans-serif*/
+    font-family: sans-serif;
+    /*Alineamos el texto hacia el centro*/
+    text-align: center;
+  }
+  /*Seleccionamos el tablero*/
+  #tablero {
+    /*Ponemos un margen superior de 50px*/
+    margin-top: 50px;
+    /*Establecemos el fondo del tablero*/
+    background: url(http://img.freepik.com/free-photo/wooden-texture_1160-686.jpg?size=338&amp;ext=jpg);
+    /*Ponemos una Sombra de caja por la parte de abajo, le ponemos extensión a la sombra y desenfocamos la sombra y luego le ponemos el color*/
+    box-shadow: 0 10px 10px -6px rgba(0, 0, 0, .6);
+    /*le damos un border muy pequeño al tablero en las esquinas*/
+    border-radius: 3px;
+    /*los bordes de cada celda del tablero se le quitan los espacios*/
+    border-collapse: collapse;
+    /*Establecemos un alto y un ancho específico para que se vea correcto el tablero*/
+    height: 400px;
+    width: 400px;
+    /*Ponemos un absolute para que el tablero se coloque sin tener en cuenta otros elementos*/
+    position: absolute;
+    /* Movemos 30px hacia abajo de su posición inicial el tablero */
+    top: 30px;
+    /*No movemos nada*/
+    right: 0;
+    /*No movemos nada*/
+    bottom: 0;
+    /*No movemos nada*/
+    left: 0;
+    /*Centramos todo*/
+    margin: 100px;
+  }
+
+  /*Seleccionamos todos los divs uno detrás de otro*/
+  #tablero div div {
+    /* Le ponemos color negros a las fichas de arriba */
+    color: #222;
+    /* Las celdas las posiciona hacia la izquierda y las fichas se quedan posicionadas justo encima */
+    float: left;
+    /*Establecemos un tamaño de las fichas*/
+    font-size: 36px;
+    /* Ponemos un color blanco medio transparente a las fichas por dentro */
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, .6);
+    /* Establecemos un alto y un ancho para las celdas interiores */
+    width: 50px;
+    height: 50px;
+  }
+  
+  /*Primero selecciona el tablero las linea de pares y pone las celdas pares en negro y luego coge las lineas de impares y las celdas impares las pone en negro*/
+  #tablero div:nth-child(odd) div:nth-child(even),
+  #tablero div:nth-child(even) div:nth-child(odd) {
+    background: rgba(0, 0, 0, .4);
+  }
+  
+  /* Selecciona el tablero y los divs hijos del 7 y les coloca el color blanco y una sombra negra a las fichas de las ultimas 2 filas */
+  #tablero div:nth-child(n+7) div {
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .6);
+  }
